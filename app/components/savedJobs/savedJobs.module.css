@@ -1,0 +1,102 @@
+.wrapper{
+  background-color: #F8F8F8;
+  border-radius: 10px;
+  height: 100%;
+  width: 100%;
+  /* margin-top: 5.5rem; */
+  /* padding-top: 1rem; */
+  overflow-y: scroll;
+  color: black;
+}
+
+.info{
+  margin: 1.2rem;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+}
+
+.container {
+  position: relative;
+  margin: 1rem auto;
+  padding: 1.5rem 0;
+  width: 90%;
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  border-radius: 10px;
+}
+
+.imgContainer{
+  position: relative;
+  width: 76px;
+  height: 76px;
+  display: grid;
+  place-content: center;
+  
+}
+
+.img {
+  width: 76px;
+  height: 76px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.jobContainer{
+  margin-left: 1.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.up {
+  margin-top: .3rem;
+  margin-bottom: 1.4rem;
+  font-weight: 400;
+}
+
+.down {
+  margin-top: .3rem;
+  font-weight: 400;
+}
+
+/* .jobContainer > p {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+
+.up {
+ font-weight: 400;
+ margin-bottom: 1.4rem;
+}
+
+.down{
+  font-weight: 400;
+} */
+
+.clearBoth{
+  clear:both;
+}
+
+/* close button */
+
+.closeBtn {
+  position: absolute;
+  top: 1.3rem;
+  right: 1.4rem;
+  z-index: 10;
+  font-size: 2.4rem;
+  font-weight: 200;
+  text-shadow: 1px 1px 2px rgb(105, 67, 67);
+  border: 1px solid rgba(121, 121, 121, 0.151);
+  border-radius: 5px;
+}

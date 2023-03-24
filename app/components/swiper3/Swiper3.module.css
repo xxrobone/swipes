@@ -1,0 +1,97 @@
+
+  .embla {
+    /* --slide-spacing: 1rem;
+    --slide-size: 100%;
+    --slide-height: 60vh; */
+    padding: 0rem;
+  }
+  .embla__viewport {
+    overflow: hidden;
+  }
+  .embla__container {
+    display: flex;
+    flex-direction: column;
+    height: calc(var(--slide-spacing) + var(--slide-height));
+    margin-top: calc(var(--slide-spacing) * -1);    
+  }
+
+  /* för att länken skall ha rätt styling eftersom länken omfamnar hela objektet */
+  .embla__container > a {
+    text-decoration: none;
+    color: white;
+  }
+
+  .embla__slide {
+    position: relative;
+    min-height: 0;
+    padding-top: var(--slide-spacing);
+    flex: 0 0 var(--slide-size);
+   
+  }
+  .embla__slide__img {
+    border: 1rem solid rgb(247, 247, 247);
+    display: block;    
+    width: 100%;
+    height: var(--slide-height);
+    object-fit: cover;
+    object-position: center;
+  }
+  .embla__slide__number {
+    width: 4.6rem;
+    height: 4.6rem;
+    z-index: 1;
+    position: absolute;
+    top: calc(var(--slide-spacing) + 0.6rem);
+    right: 0.6rem;
+    border-radius: 50%;
+    background-color: rgba(var(--background-site-rgb-value), 0.85);
+    line-height: 4.6rem;
+    font-weight: 900;
+    text-align: center;
+    pointer-events: none;
+  }
+  .embla__slide__number > span {
+    color: var(--brand-primary);
+    background-image: linear-gradient(
+      45deg,
+      var(--brand-primary),
+      var(--brand-secondary)
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 1.6rem;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+
+  .info {
+    position: absolute;
+    left: 2rem;
+    bottom: 4rem;
+    z-index: 2;
+    text-align: center;
+  }
+  
+  .info > h2 {
+      margin-bottom: 0.5rem;
+      text-align: left;
+      font-size: 1.6rem;
+      font-weight: 600;
+      text-shadow: 2px 3px 5px rgba(0,0,0,0.6);
+  }
+
+  .info > h4 {
+    padding: 0.25rem 0.25rem;
+    background-color: black;
+    width: fit-content;
+    border-radius: 2px;
+    text-align: left;
+    font-size: 1rem;
+    font-weight: 400;
+    text-shadow: 1px 2px 3px rgba(0,0,0,0.5);
+}

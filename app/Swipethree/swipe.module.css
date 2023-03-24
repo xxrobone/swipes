@@ -1,0 +1,31 @@
+.swipe_wrapper {
+  width: 100%;
+  min-height: 100vh;
+  height: 100%;   
+}
+
+.swipe_wrapper > h1 {
+  width: 100%;
+  margin: 2rem 0;
+  text-align: center;
+  position: relative;
+  font-size: 2rem;
+  color: black;
+}
+
+.swipe_wrapper__carousel {
+  position: relative;
+  background-color: var(--background-code);
+}
+@media (max-width: 749px) {
+  .swipe_wrapper__carousel {
+    border-top: 0.1rem solid var(--detail-low-contrast);
+    border-bottom: 0.1rem solid var(--detail-low-contrast);
+  }
+}
+@media (min-width: 750px) {
+  .swipe_wrapper__carousel {
+    border-radius: 0.4rem;
+    border: 0.1rem solid var(--detail-low-contrast);
+  }
+}

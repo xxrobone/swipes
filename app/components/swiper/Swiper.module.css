@@ -1,0 +1,154 @@
+.swipe {
+  position: relative;
+  margin: 0 auto;
+  width: 90svw;
+  max-width: 90vw;
+  height: 100%;
+  max-height: 67.5vh;    
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
+
+@media (min-width: 768px) {
+  .swipe {
+      width: 50svw;
+      max-width: 60vw;
+  }
+}
+
+.swipe > .card {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 58svh;
+  max-height: 100%;    
+  color: #fff;
+  display: grid;
+  place-items: center center;
+  border-radius: 10px;
+}
+
+.img {
+  position: relative;
+  width: 100%;
+  height: 100%;
+ /*  border: 1rem solid rgb(247, 247, 247); */
+  border-radius: 10px;
+  filter: drop-shadow(0 4px 5px rgba(0,0,0,.325));
+}
+
+.img > img {
+  object-fit: cover;
+  object-position: center;
+}
+
+.swipe > p {
+  text-align: left;
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.swipe .card > h2 {
+  text-align: left;
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+
+.swipe .card .info {
+  position: absolute;
+  left: 0;
+  left: 2rem;
+  bottom: 4rem;
+  z-index: 2;
+  text-align: center;  
+}
+
+.info {
+  position: absolute;
+  left: 2rem;
+  bottom: 4rem;
+  z-index: 2;
+  text-align: center;
+}
+
+.info > h2 {
+    margin-bottom: 0.25rem;
+    padding: 0.25 0;
+    text-align: left;
+    font-size: 1.125rem;
+    font-weight: 600;
+    text-shadow: 2px 3px 5px rgba(0,0,0,0.5);
+}
+
+.info > h4 {
+  width: fit-content;
+  border-radius: 2px;
+  text-align: left;
+  font-size: 1.125rem;
+  font-weight: 400;
+  text-shadow: 2px 3px 5px rgba(0,0,0,0.5);
+}
+
+.arrowIcon {
+padding: 1rem;
+position: absolute;
+z-index: 100;
+right: 2rem;
+bottom: 15vh;
+display: grid;
+place-content: center;  
+color: #000;
+font-size: 1.5rem;
+background-color: #fff;
+border-radius: 50%;  
+}
+
+.saved {
+position: absolute;
+top: -10px;
+right: 3rem;
+font-size: 1.5rem;
+z-index: 1001;
+color: #9EB45A;
+opacity: 0;
+}
+
+.save {
+  position: absolute;
+  top: 20%;
+  left: 20%;
+  z-index: 100;
+  color: #9EB45A;
+  padding: 1rem;
+  background-color: black;
+  opacity: 0;
+}
+
+.throw {
+  position: absolute;
+  bottom: 20%;
+  left: 20%;
+  z-index: 100;
+  color: tomato;
+  padding: 1rem;
+  background-color: black;
+  opacity: 0;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+ /*  background-color: black; */
+  border: 1rem solid rgb(247, 247, 247);
+  border-radius: 10px;
+  pointer-events: none;
+}
