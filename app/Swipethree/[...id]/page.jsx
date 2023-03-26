@@ -1,6 +1,5 @@
 'use client'
 import React from 'react';
-
 import { usePathname } from 'next/navigation';
 import { Jobs } from '@/data/jobsArray';
 import JobDetails from '@/app/components/jobDetails/JobDetails';

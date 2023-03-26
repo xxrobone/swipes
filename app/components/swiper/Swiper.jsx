@@ -48,7 +48,7 @@ const randomId = (max) => {
 }
 
 const newId = randomId(100)
-console.log('random id: ' + newId)
+/* console.log('random id: ' + newId) */
 // the card
 
 const Card = ({ card, style, onDirectionLock, onDragStart, onDragEnd, animate }) => {
