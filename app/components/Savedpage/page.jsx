@@ -1,6 +1,6 @@
 import SavedJobs from "../savedJobs/savedJobs";
-import Header from '@/components/header/Header.jsx'
-import Footer from '@/components/footer/Footer.jsx'
+import Header from "../header/Header";
+import Footer from "../footer/Footer";
 
 export default function Savedpage() {
   return (
