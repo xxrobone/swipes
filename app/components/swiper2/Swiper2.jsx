@@ -1,9 +1,13 @@
 'use client'
 import Image from "next/image"
-import TinderCard from "react-tinder-card"
+import dynamic from "next/dynamic"
 import styles from './Swiper2.module.css'
 
 const Swiper2 = ({ employer, role, img, id }) => {
+
+    const TinderCard = dynamic(() => import('react-tinder-card'), {
+        ssr: false
+      });
 
     const onSwipe = (direction) => {
         console.log('You swiped: ' + direction)
