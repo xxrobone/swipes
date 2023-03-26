@@ -1,10 +1,12 @@
-.swipe_wrapper {
+.swiperWrapper {
   position: relative;
   margin: 0;
   padding: 0;    
   width: 100%;
   min-height: fit-content;
   height: 100%;  
+  display: grid;
+  place-content: center;
   
   color: black;
 }
@@ -12,7 +14,7 @@
 
 
 @media (min-width: 768px) {
-  .swipe_wrapper {
+  .swiperWrapper {
       width: 50%;
   }
 }

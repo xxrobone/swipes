@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@react-spring/web": "^9.7.1",
     "embla-carousel-react": "^7.1.0",
     "framer-motion": "^10.9.1",
     "next": "13.2.4",

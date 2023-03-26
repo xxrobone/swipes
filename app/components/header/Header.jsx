@@ -8,11 +8,11 @@ export default function Header() {
     <div className={styles.headerContainer}>
       <nav>
         <ul>
-          <Link href="/swipe">Swipe1</Link>
-          <Link href="/swipetwo">Swipe2</Link>
-          <Link href="/">Swipe3</Link>
-          <Link href="/">Swipe4</Link>
-          <Link href="/">Swipe5</Link>
+          <Link className={styles.navItem}  href="/Swipe">Swipe1</Link>
+          <Link className={styles.navItem}  href="/Swipetwo">Swipe2</Link>
+          <Link className={styles.navItem}  href="/Swipethree">Swipe3</Link>
+         {/*  <Link href="/">Swipe4</Link>
+          <Link href="/">Swipe5</Link> */}
         </ul>
     </nav>
     </div>
