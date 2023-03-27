@@ -58,8 +58,8 @@ const JobDetails = ({ employer, role, desc, quali, img, id }) => {
     }, [])
 
   return (
-      <article className={styles.jobs_wrapper} key={id}>
-          <div className={styles.icons_wrapper}>
+      <article className={styles.jobsWrapper} key={id}>
+          <div className={styles.iconsWrapper}>
               <RiBookmarkLine onClick={() => handleSave()}/>
               <RiCloseLine onClick={() => router.back()} />
           </div>
@@ -72,9 +72,14 @@ const JobDetails = ({ employer, role, desc, quali, img, id }) => {
           </div>
           <div className={styles.info}>
             <h2>{employer}</h2>
-            <h4>{role}</h4>
+        <h4>{role}</h4>
+        <h3 className={styles.jobDesc}>Arbetsbeskrivning</h3>
             <p>{desc}</p>
-            <p>{quali}</p>
+        <p>{quali}</p>
+        <h3 className={styles.jobDesc}>Lön</h3>
+        <p>45.000</p>
+        <h3 className={styles.jobDesc}>Anställningsform</h3>
+        <p>Tillsvidareanställning</p>
           </div>
           <div>
         <motion.p
