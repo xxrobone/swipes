@@ -1,0 +1,21 @@
+.saved {
+    padding: 1rem 2rem;
+    width: 160px;
+    height: 80px;
+    position: absolute;
+    top: 5rem;
+    left: 30%;
+    transform: translate(-50%);
+    z-index: 100;
+    display: grid;
+    place-content: center;
+    border: 5px solid rgba(89, 133, 89, 0.267);
+    color: white;
+	font-size: 40px;
+	-webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: rgb(1, 26, 11);
+    background: rgba(191, 235, 191, 0.562);
+    font-size: 2rem;
+    font-weight: 800;
+    border-radius: 20px;
+}

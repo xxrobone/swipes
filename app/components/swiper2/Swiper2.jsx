@@ -1,11 +1,17 @@
 'use client'
+import {useState} from 'react'
 import Image from "next/image"
 import dynamic from "next/dynamic"
-import styles from './Swiper2.module.css'
 import Link from "next/link"
 
+// components 
+/* import Saved from "../saved/Saved" */
+
+// styles
+import styles from './Swiper2.module.css'
+
 const Swiper2 = ({ data }) => {
-    
+   /*  const [save, setSave] = useState(false) */
 
     const TinderCard = dynamic(() => import('react-tinder-card'), {
         ssr: false
@@ -38,12 +44,12 @@ const Swiper2 = ({ data }) => {
         console.log('id is : ' + id, ' direction is : ' + dir)
         if (dir == 'up') {
             console.log('direction is up')
-            saveJob( employer, role, desc, quali, img, id)
+            saveJob(employer, role, desc, quali, img, id)
         }
       }
 
     return (
-        <>
+        <>            
             <div className={styles.cardContainer}>
                 {
                 data.map(({  employer, role, desc, quali, img, id }) => (
@@ -54,7 +60,7 @@ const Swiper2 = ({ data }) => {
                 >
                     read more
                         </Link>
-                        
+                        {/* <Saved save={save} /> */}
                     <TinderCard                            
                     className={styles.swiper}
                     onSwipe={(dir) => swiped(dir,  employer, role, desc, quali, img, id)}
