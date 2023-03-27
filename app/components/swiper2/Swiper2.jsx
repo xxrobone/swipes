@@ -56,7 +56,6 @@ const Swiper2 = ({ data }) => {
                 <div key={id}>
                     <Link href={'/Swipetwo/' + id}
                     className={styles.readmore}
-                    
                 >
                     read more
                         </Link>
