@@ -151,8 +151,7 @@ const Swiper = ({ data }) => {
         return cards.map((card, index) => {
             const { employer, role, desc, quali, id, img} = card
 
-            const saveJob = (cardId) => {
-                    
+            const saveJob = (cardId) => {                   
                 let myjobs = JSON.parse(localStorage.getItem('myjobs') || "[]")
                 console.log(myjobs)
                 let newJob;

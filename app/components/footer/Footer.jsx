@@ -1,3 +1,4 @@
+'use client'
 import Image from 'next/legacy/image'
 import Link from 'next/link'
 import styles from '../footer/Footer.module.css'
@@ -9,11 +10,11 @@ export default function Footer() {
   return (
     <div className={styles.footerContainer}>
       <div className={styles.row}>
-      <Link href='/Swipe'>
-        <span className={styles.footerIcon1}>
-            <Image src={jobFlowIcon} alt='project' width={31} />
-          </span>
-      </Link>
+      {/* <Link href='/Swipe'> */}
+          <Image src={jobFlowIcon} alt='project' width={31}
+          className={styles.footerIcon1}
+          />
+      {/* </Link> */}
       </div>
 
       {/* <Link href='/Swipe'> */}

@@ -15,7 +15,7 @@ isBrowser() // true
 
   return (
       <div className={styles.swiperWrapper}>
-          {Jobs.map(job => <Swiper2 key={job.id} {...job} />)}
+          <Swiper2 data={Jobs} />
     </div>
   )
 }
