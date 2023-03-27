@@ -33,14 +33,14 @@ function SavedJobs() {
           onClick={(e) => handleClick(e)}
           >
             {/* kan comment out this part to take img away */}
-              {/*   <div className={styles.imgContainer}>
+                <div className={styles.imgContainer}>
               <Image
                 src={job.img}
                 alt={job.employer}
                 fill
                 priority
                 className={styles.img} />
-            </div> */}
+            </div>
              {/* ends here */}
             <div className={styles.jobContainer}> 
               <p className={styles.title}>Företag</p>  

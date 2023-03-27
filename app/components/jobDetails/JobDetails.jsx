@@ -23,12 +23,7 @@ const JobDetails = ({ employer, role, desc, quali, img, id }) => {
 
           if (id) {
             newJob = {
-                id,
-                employer,
-                role,
-              desc,
-              quali,
-              img
+              employer, role, desc, quali, img, id
             }
           } else {
             return

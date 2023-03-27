@@ -11,7 +11,7 @@ const Swiper2 = ({ data }) => {
         ssr: false
     });
     
-    const saveJob = (employer, role, id, img, desc, quali) => {
+    const saveJob = ( employer, role, desc, quali, img, id) => {
                     
         let myjobs = JSON.parse(localStorage.getItem('myjobs') || "[]")
         console.log(myjobs)
@@ -19,12 +19,7 @@ const Swiper2 = ({ data }) => {
     
           if (id) {
             newJob = {
-                id,
-                employer,
-                role,
-                desc,
-                quali,
-                img
+                employer, role, desc, quali, img, id
             }
           } else {
             return
@@ -39,11 +34,11 @@ const Swiper2 = ({ data }) => {
         console.log('id: ' + myIdentifier + ' left the screen')
     }
     
-    const swiped = (dir, employer, role, id, img, desc, quali) => {
+    const swiped = (dir,  employer, role, desc, quali, img, id) => {
         console.log('id is : ' + id, ' direction is : ' + dir)
         if (dir == 'up') {
             console.log('direction is up')
-            saveJob(employer, role, id, img, desc, quali)
+            saveJob( employer, role, desc, quali, img, id)
         }
       }
 
@@ -51,38 +46,37 @@ const Swiper2 = ({ data }) => {
         <>
             <div className={styles.cardContainer}>
                 {
-                    data.map(({ employer, role, id, img, desc, quali }) => (
-                        <>
-                             <Link href={'/Swipetwo/' + id}
-                                    className={styles.readmore}
+                data.map(({  employer, role, desc, quali, img, id }) => (
+                <div key={id}>
+                    <Link href={'/Swipetwo/' + id}
+                    className={styles.readmore}
+                    
+                >
+                    read more
+                        </Link>
+                        
+                    <TinderCard                            
+                    className={styles.swiper}
+                    onSwipe={(dir) => swiped(dir,  employer, role, desc, quali, img, id)}
+                    onCardLeftScreen={() => onCardLeftScreen(id)}            
                     >
-                        read more
-                     </Link>
-                        <TinderCard
-                            key={id}
-            className={styles.swiper}
-            onSwipe={(dir) => swiped(dir, id, employer, role, id, img, desc, quali)}
-            onCardLeftScreen={() => onCardLeftScreen(id)}            
-            >
-            <div className={styles.swiperImage} >
-                <Image
-                    className={styles.img}
-                    src={img}
-                    alt={role}
-                    priority
-                    fill
-                    />
-            </div>
-                    <div className={styles.info}>
-                            <h2 className={styles.employer}>{employer}</h2>
-                            <h4 className={styles.role}>{role}</h4>
-                        
+                    <div className={styles.swiperImage} >
+                        <Image
+                            className={styles.img}
+                            src={img}
+                            alt={role}
+                            priority
+                            fill
+                            />
                     </div>
-            
-        </TinderCard>
-                        </>
-                        
-                    ))
+                        <div className={styles.info}>
+                                <h2 className={styles.employer}>{employer}</h2>
+                                <h4 className={styles.role}>{role}</h4>
+                            
+                        </div>            
+                    </TinderCard>
+                </div>                        
+                ))
                 }
         </div>
         </>

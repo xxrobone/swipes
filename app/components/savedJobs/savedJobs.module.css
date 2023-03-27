@@ -7,10 +7,11 @@
   /* padding-top: 1rem; */
   overflow-y: scroll;
   color: black;
+  background-color: #CBC497
 }
 
 .info{
-  margin: 1.2rem;
+  margin: 1rem 2rem;
   font-size: 0.75rem;
   text-transform: uppercase;
 }
@@ -18,7 +19,7 @@
 .container {
   position: relative;
   margin: 1rem auto;
-  padding: 1.5rem 0;
+  padding: 1rem 1rem;
   width: 90%;
   display: flex;
   align-items: center;
@@ -91,12 +92,12 @@
 
 .closeBtn {
   position: absolute;
-  top: 1.3rem;
-  right: 1.4rem;
+  top: 1rem;
+  right: 1rem;
   z-index: 10;
-  font-size: 2.4rem;
+  font-size: 2rem;
   font-weight: 200;
   text-shadow: 1px 1px 2px rgb(105, 67, 67);
-  border: 1px solid rgba(121, 121, 121, 0.151);
+  border: 1px solid rgba(99, 98, 98, 0.233);
   border-radius: 5px;
 }
