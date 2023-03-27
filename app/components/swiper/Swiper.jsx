@@ -1,6 +1,6 @@
 "use client"
 import React, { useState, useEffect } from 'react'
-import { motion, useMotionValue, useTransform, useMotionTemplate } from 'framer-motion'
+import { motion, useMotionValue, useTransform, useMotionTemplate, AnimatePresence } from 'framer-motion'
 import Image from 'next/image'
 import { RiArrowRightLine, RiBookmarkFill } from 'react-icons/ri'
 import styles from './Swiper.module.css'
@@ -107,7 +107,8 @@ const Swiper = ({ data }) => {
     const shadowBlur = useTransform(dragStart.axis === 'x' ? x : y, [-200, 0, 200], [0, 25, 0]);
     const shadowOpacity = useTransform(dragStart.axis === 'x' ? x : y, [-200, 0, 200], [0, .4, 0]);
     const boxShadow = useMotionTemplate`0 ${shadowBlur}px 25px -5px rgba(0, 0, 0, ${shadowOpacity})`;
-    const onDirectionLock = axis => setDragStart({ ...dragStart, axis: axis });
+  const onDirectionLock = axis => setDragStart({ ...dragStart, axis: axis });
+  
     const animateCardSwipe = animation => {
       setDragStart({ ...dragStart, animation });        
       setTimeout(() => {
@@ -126,19 +127,19 @@ const Swiper = ({ data }) => {
     const onDragEnd = (info) => {
       if (dragStart.axis === 'x') {
         if (info.offset.x >= 100) 
-          animateCardSwipe({ x: 360, y: 0 });
+          animateCardSwipe({ x: 560, y: 0 });
         else if (info.offset.x <= -100)
-          animateCardSwipe({ x: -360, y: 0 }); 
+          animateCardSwipe({ x: -560, y: 0 }); 
       } else {
           if (info.offset.y >= 300) {
               console.log('will delete from deck')
-            animateCardSwipe({ x: 0, y: 260 }); 
+            animateCardSwipe({ x: 0, y: 560 }); 
         }
          
         else if (info.offset.y <= -300) {
               console.log('will save to job')
               console.log(info)
-            animateCardSwipe({ x: 0, y: -260 }); 
+            animateCardSwipe({ x: 0, y: -560 }); 
         }
       }
     }
@@ -175,34 +176,39 @@ const Swiper = ({ data }) => {
 
           if (index === cards.length - 1) {
             return (
-              <Card 
-                card={card}
-                key={index}
-                style={{ x, y, zIndex: index }}
-                onDirectionLock={axis => onDirectionLock(axis)}
-                    onDragEnd={(e, info) => {
-                        onDragEnd(info)
-                        if (info.offset.y <= -300) {
-                            console.log(card.id + ' is the card id to match with data, to save to saved jobs')
-                            saveJob(card.id)
-                          animateCardSwipe({ x: 0, y: -260 }); 
-                        } else {
-                          doSomething()
-                      }
-                    }}
-                animate={dragStart.animation}
-              />
+              <AnimatePresence key={index}>
+                <Card 
+                  card={card}
+                  key={card.id}
+                  style={{ x, y, zIndex: index }}
+                  onDirectionLock={axis => onDirectionLock(axis)}
+                      onDragEnd={(e, info) => {
+                          onDragEnd(info)
+                          if (info.offset.y <= -300) {
+                              console.log(card.id + ' is the card id to match with data, to save to saved jobs')
+                              saveJob(card.id)
+                            animateCardSwipe({ x: 0, y: -560 }); 
+                          } else {
+                            doSomething()
+                        }
+                      }}
+                  animate={dragStart.animation}
+                  exit={{ opacity: 0 }}
+                />
+              </AnimatePresence>
             )
           } else return (
-            <Card 
-                card={card}
-                key={index}
-                style={{
-                scale, 
-                boxShadow,
-                zIndex: index
-              }}
-            />
+            <AnimatePresence key={index}>
+              <Card 
+                  card={card}                  
+                  style={{
+                  scale, 
+                  boxShadow,
+                    zIndex: index
+                }}
+                exit={{ opacity: 0 }}
+              />              
+            </AnimatePresence>
           )
         })
       }

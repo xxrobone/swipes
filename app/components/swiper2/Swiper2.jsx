@@ -52,13 +52,17 @@ const Swiper2 = ({ data }) => {
             <div className={styles.cardContainer}>
                 {
                     data.map(({ employer, role, id, img, desc, quali }) => (
-                        
+                        <>
+                             <Link href={'/Swipetwo/' + id}
+                                    className={styles.readmore}
+                    >
+                        read more
+                     </Link>
                         <TinderCard
                             key={id}
             className={styles.swiper}
             onSwipe={(dir) => swiped(dir, id, employer, role, id, img, desc, quali)}
-            onCardLeftScreen={() => onCardLeftScreen(id)}
-            
+            onCardLeftScreen={() => onCardLeftScreen(id)}            
             >
             <div className={styles.swiperImage} >
                 <Image
@@ -68,11 +72,6 @@ const Swiper2 = ({ data }) => {
                     priority
                     fill
                     />
-                    <Link href={'/Swipetwo/' + id}
-                                    className={styles.readmore}
-                    >
-                        read more
-                     </Link>
             </div>
                     <div className={styles.info}>
                             <h2 className={styles.employer}>{employer}</h2>
@@ -81,6 +80,8 @@ const Swiper2 = ({ data }) => {
                     </div>
             
         </TinderCard>
+                        </>
+                        
                     ))
                 }
         </div>
